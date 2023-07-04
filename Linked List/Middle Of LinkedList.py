@@ -1,3 +1,4 @@
+# Brute force
 class Solution(object):
     def middleNode(self, head):
         """
@@ -11,3 +12,15 @@ class Solution(object):
             current = current.next
         mid = len(nums)//2
         return nums[mid]
+
+# Optimized
+
+class Solution(object):
+    def middleNode(self, head):
+        runner = head
+        while runner and runner.next:
+            head = head.next
+            runner = runner.next.next
+        return head
+
+        
